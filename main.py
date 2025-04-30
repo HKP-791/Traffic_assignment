@@ -1,12 +1,12 @@
 import numpy as np
 import pandas as pd
 import networkx as nx
-import matplotlib.pyplot as plt
 import time
 import random
 from collections import defaultdict
 from tqdm import *
 import argparse
+import matplotlib.pyplot as plt
 
 from algorithm.optimal_minimized import find_optimal_alpha
 from algorithm.dijkstra_shortest import dijkstra
@@ -146,16 +146,16 @@ def visulize_network(G, pos_df):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--edges_df', type=str, default='data/edges.csv', help='The directory of csv that describe the nodes and edges of digraph')
-    parser.add_argument('--od_df', type=str, default='data/od_pairs.csv', help='The directory of csv that discribe OD pairs')
-    parser.add_argument('--pos_df', type=str, default='data/map.csv', help='The directory of csv that describes the shape of digraph')
+    parser.add_argument('--edges', type=str, default='data/edges.csv', help='The directory of csv that describe the nodes and edges of digraph')
+    parser.add_argument('--od', type=str, default='data/od_pairs.csv', help='The directory of csv that discribe OD pairs')
+    parser.add_argument('--pos', type=str, default='data/map.csv', help='The directory of csv that describes the shape of digraph')
     parser.add_argument('--max_iter', type=int, default=10000, help='The maximum number of iterations')
     parser.add_argument('--tol', type=int, default=1e-8, help='The minimum alpha tolerance')
     args = parser.parse_args()
 
-    edges_df = pd.read_csv(args.edges_df)
-    od_df = pd.read_csv(args.od_df)
-    pos_df = pd.read_csv(args.pos_df)
+    edges_df = pd.read_csv(args.edges)
+    od_df = pd.read_csv(args.od)
+    pos_df = pd.read_csv(args.pos)
     max_iter = args.max_iter
     tol = args.tol
 
