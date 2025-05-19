@@ -1,4 +1,4 @@
-def find_optimal_alpha(obj, bounds, tol=1e-2, max_iter=100):
+def find_optimal_alpha(obj, bounds, tol=1e-2, max_iter=50):
     
     a, b = bounds
     for _ in range(max_iter):
